@@ -1,3 +1,5 @@
+var userCtrl = require('../controllers/server.controller');
+
 /* GET home page. */
 exports.index = function(req, res){
   res.render('index', {  });
@@ -8,9 +10,22 @@ exports.login = function(req, res){
 };
 
 exports.loginPost = function(req, res){
-  console.log(req.body.uname);
-  console.log(req.body.pwd);
-  res.render('login', {  });
+
+  console.log(req.body.uname, + " " + req.body.pwd);
+  var request = {user_name: req.body.uname};
+  var userInfo = userCtrl.GetUserInformation(request,res);
+  // var userType = request.body.user_type;
+  // var indexPage = "";
+  // switch (userType.toLowercase()) {
+  //   case 'provider':
+  //     indexPage = 'providerprofile'
+  //     break;  
+  //   case 'customer':
+  //     indexPage = 'searchpage'    
+  //     break;
+  // }
+  console.log(userInfo);
+  res.render('login', { title: 'Express' });
 };
 
 exports.register = function(request, res)
@@ -18,19 +33,9 @@ exports.register = function(request, res)
   //console.log(request.body.);
   console.log(request.body.pwd);
 
-  sanitizeRegisterationData (request.body);
-
-  var userType = request.body.user_type;
-  var indexPage = "";
-  switch (userType.toLowercase()) {
-    case 'provider':
-      indexPage = 'providerprofile'
-      break;  
-    case 'customer':
-      indexPage = 'searchpage'    
-      break;
-  }
-  res.render(indexPage, { title: 'Express' });
+  var regData = sanitizeRegisterationData (request.body);
+  var user = userCtrl.create(regData,res);  
+  res.render('/login', { title: 'Express' });
 };
 
 

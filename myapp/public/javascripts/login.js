@@ -1,9 +1,12 @@
 
 $( document ).ready(function() {
 
-$('#loginButton').off('click').on('click',function(){
-    var userName = $('#user_name');
-    var password = $('#password'); 
+var userName = $('#user_name');
+var password = $('#password');
+var loginButton = $('#btnLogin');
+
+
+$(loginButton).off('click').on('click',function(){
     var obHelper = new Helper();
    obHelper.PostDataToServer('/login', {"uname": $(userName).val(), "pwd":$(password).val()}, function(){ console.log('hello On success');});
 });
