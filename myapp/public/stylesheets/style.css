@@ -1,6 +1,9 @@
 
 body {
-    background: url(../images/bg.jpg) 0 0 fixed;
+    background: url(../images/bg.jpg) 0 0 no-repeat;
+}
+body.inner {
+    background: none;
 }
 .login-container {
     background: rgba(255, 255, 255, 0.99);
@@ -9,7 +12,6 @@ body {
     overflow: auto;
     position: relative;
     top: 50px;
-    margin-bottom: 50px;
 }
 
 .site-bg {
@@ -43,4 +45,26 @@ body {
 
 .site-bg__effect, .site-bg__overlay {
     position: absolute !important;
+}
+
+.recipy-ctr .recipy-list li {
+    float: left;
+    margin: 0 15px 0 0;
+    color: #666;
+}
+
+.recipy-ctr img {
+    width: 50%;
+}
+
+.clr {
+    clear: left;
+}
+
+.light-blue.lighten-1 {
+    background: #ed217c !important;
+}
+
+.price {
+    color: #f00;
 }
