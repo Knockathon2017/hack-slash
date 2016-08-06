@@ -75,57 +75,50 @@
                     <div id="test1" class="col s12">
                       <div class="row">
                           <div class="input-field col s12">
-                            <input id="first_name" type="text" class="validate">
+                            <input id="first_name" name="first_name" type="text" class="validate">
                             <label for="first_name">First Name</label>
                           </div>
                         </div>
 
                         <div class="row">
                           <div class="input-field col s12">
-                            <input id="last_name" type="text" class="validate">
+                            <input id="last_name" name="last_name" type="text" class="validate">
                             <label for="first_name">Last Name</label>
                           </div>
                         </div>
 
                         <div class="row">
                           <div class="input-field col s12">
-                            <input id="email" type="email" class="validate">
+                            <input id="email" name="email" type="email" class="validate">
                             <label for="email">Email</label>
                           </div>
                         </div>
 
                         <div class="row">
                           <div class="input-field col s12">
-                            <input id="email" type="number" class="validate">
-                            <label for="email">Mobile</label>
+                            <input id="pri_mobile_no" name="pri_mobile_no" type="number" class="validate">
+                            <label for="pri_mobile_no">Mobile</label>
                           </div>
-                        </div>
-
-                        <div class="row">
-                          <div class="input-field col s12">
-                            <input id="email" type="number" class="validate">
-                            <label for="email">Alternet Number</label>
-                          </div>
-                        </div>
+                        </div>                       
 
                         <div class="row">
                           <div class="input-field col s6">
-                            <input id="icon_prefix" type="text" class="validate">
-                            <label for="icon_prefix">Address 1</label>
+                            <input id="address1" name="address1" type="text" class="validate">
+                            <label for="address1">Address 1</label>
                           </div>
                           <div class="input-field col s6">
-                            <input id="icon_telephone" type="tel" class="validate">
-                            <label for="icon_telephone">Address 2</label>
+                            <input id="address2" name="address2" type="tel" class="validate">
+                            <label for="address2">Address 2</label>
                           </div>
                         </div>
 
                         <div class="row">
                           <div class="input-field col s6">
-                            <input id="icon_prefix" type="text" class="validate">
-                            <label for="icon_prefix">Zip Code</label>
+                            <input id="zip_code" name="zip_code" type="text" class="validate">
+                            <label for="zip_code">Zip Code</label>
                           </div>
                           <div class="input-field col s6">
-                            <select>
+                            <select id='city'>
                               <option value="" selected>Choose your option</option>
                               <option value="1">Noida</option>
                               <option value="2">Delhi</option>
@@ -141,7 +134,7 @@
                     </form>
 
                 <div class="">
-                  <a class="waves-effect waves-light btn tab right">Register</a>
+                  <a id="registerBtn" class="waves-effect waves-light btn tab right">Register</a>
                 </div>
             </div>
             </div> <!-- Register tab end -->
@@ -158,6 +151,6 @@
   <script src="javascripts/materialize.js"></script>
   <script src="javascripts/init.js"></script>
   <script src="javascripts/login.js"></script>
-
+  <script src="javascripts/helper.js"></script>
   </body>
 </html>
