@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,156 +8,128 @@
 
   <!-- CSS  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="./stylesheets/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link href="./stylesheets/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="stylesheets/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="stylesheets/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 </head>
-<body>
+<body  class="inner">
+  <nav class="light-blue lighten-1" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">
+      <img src="images/logo-1.png">
+    </a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#">Navbar Link</a></li>
+      </ul>
+
+      <ul id="nav-mobile" class="side-nav">
+        <li><a href="#">Navbar Link</a></li>
+      </ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+
+
+    </div>
+  </div>
+
 
   <div class="container">
     <div class="section">
       <!--   Icon Section   -->
-      <div class="row">
-        <div class="login-container">
-          <div class="col s6">
-                <img class="responsive-img" src="images/subscribe.jpg">
-            </div>
-                <div class="col s6">
-                  <div class="row">
-                    
-                    <div class="col s12">
-                      <ul class="tabs">
-                        <li class="tab col s3"><a href="#test1" class="waves-effect waves-light btn tab">Login</a></li>
-                        <li class="tab col s3"><a href="#test2" class="waves-effect waves-teal btn-flat right tab">New User Register Here</a></li>
-                      </ul>
-                    </div>
+      
+      <div class="col s12 m8 offset-m2 l6 offset-l3">
+        <div>
+          <div class="row">
+          <div class="input-field col s6">
+            <select id="timelist">
+              <option value="" disabled selected>Choose your option</option>
+              <option value="1">Breakfast 7:00 AM to 8:00 AM</option>
+              <option value="2">Lunch 11:00 AM to 12:00 PM</option>
+              <option value="3">Snacks 3:00 PM to 4:00 PM</option>
+              <option value="4">Dinner 6:00 PM to 7:00 PM</option>
+            </select>
+            <label>Order placement time</label>
+          </div>
+
+          
+            <form class="col s6">
+              <div class="row">
+                <div class="input-field col s12">
+                  <input id="zip" type="text" class="validate">
+                  <label for="zip">Search by Zip</label>
                 </div>
-                <div id="test1">
-                  <div class="section center">
-                  <h5>See your account now</h5>
-                  <p>Get unlimited menus of foods and it's easy to order.</p>
-                  </div>
-
-                  <div class="row">
-                      <div class="input-field col s12">
-                        <input id="first_name" type="text" class="validate">
-                        <label for="first_name">Username</label>
-                      </div>
-                    </div>
-
-                    <div class="row">
-                      <div class="input-field col s12">
-                        <input id="password" type="password" class="validate">
-                        <label for="password">Password</label>
-                      </div>
-                    </div>
-                    <a class="waves-effect waves-light btn tab right">Login</a>
-                </div>
-            </div> <!-- login tab end -->
-
-            <div id="test2">
-              <div class="col s6">
-              <div class="section center">
-                <h5>See your account now</h5>
-                <p>Get unlimited menus of foods and it's easy to order.</p>
               </div>
+            </form>
+          </div>
+        </div>
+          
+        </div>
 
-                    <form>
-                      <div class="row">
-                        <div class="input-field col s6">
-                          <input type="checkbox" class="filled-in" id="filled-in-box" />
-                          <label for="filled-in-box">Register as a Consumer</label>
-                        </div>
-
-                        <div class="input-field col s6">
-                          <input type="checkbox" class="filled-in" id="filled-in-box1" checked="checked" />
-                          <label for="filled-in-box1">Register as a Provider</label>
-                        </div>
-                      </div>
-                    <div id="test1" class="col s12">
-                      <div class="row">
-                          <div class="input-field col s12">
-                            <input id="first_name" type="text" class="validate">
-                            <label for="first_name">First Name</label>
-                          </div>
-                        </div>
-
-                        <div class="row">
-                          <div class="input-field col s12">
-                            <input id="last_name" type="text" class="validate">
-                            <label for="first_name">Last Name</label>
-                          </div>
-                        </div>
-
-                        <div class="row">
-                          <div class="input-field col s12">
-                            <input id="email" type="email" class="validate">
-                            <label for="email">Email</label>
-                          </div>
-                        </div>
-
-                        <div class="row">
-                          <div class="input-field col s12">
-                            <input id="email" type="number" class="validate">
-                            <label for="email">Mobile</label>
-                          </div>
-                        </div>
-
-                        <div class="row">
-                          <div class="input-field col s12">
-                            <input id="email" type="number" class="validate">
-                            <label for="email">Alternet Number</label>
-                          </div>
-                        </div>
-
-                        <div class="row">
-                          <div class="input-field col s6">
-                            <input id="icon_prefix" type="text" class="validate">
-                            <label for="icon_prefix">Address 1</label>
-                          </div>
-                          <div class="input-field col s6">
-                            <input id="icon_telephone" type="tel" class="validate">
-                            <label for="icon_telephone">Address 2</label>
-                          </div>
-                        </div>
-
-                        <div class="row">
-                          <div class="input-field col s6">
-                            <input id="icon_prefix" type="text" class="validate">
-                            <label for="icon_prefix">Zip Code</label>
-                          </div>
-                          <div class="input-field col s6">
-                            <select>
-                              <option value="" selected>Choose your option</option>
-                              <option value="1">Noida</option>
-                              <option value="2">Delhi</option>
-                              <option value="3">Gurgaon</option>
-                              <option value="3">Banglore</option>
-                              <option value="3">Pune</option>
-                            </select>
-                            <label>Select City</label>
-                          </div>
-                        </div>
-
-                    </div>
-                    </form>
-
-                <div class="">
-                  <a class="waves-effect waves-light btn tab right">Register</a>
-                </div>
+         <% for(var i=0;i<Data.details.length;i++){%>
+         <div class="col s12 m8 offset-m2 l6 offset-l3">
+          <div class="card-panel grey lighten-5 z-depth-1">
+            <div class="row valign-wrapper recipy-ctr">
+              <div class="col s2">
+                <img src="images/users/cassie_A.png" alt="" class="circle responsive-img"> <!-- notice the "circle" class -->
+              </div>
+              <div class="col s10">
+                <span class="black-text">
+                  <strong><%=Data.details[i].name %></strong> <a class="waves-effect waves-light btn tab right">Send your request</a>
+                  <div class="location clr">Location : Sector 62</div> 
+                  <div class="price"><%=Data.details[i].price %>/- Only</div>
+                  <ul class="recipy-list">
+                    <li>Rajma</li>
+                    <li>Rice</li>
+                    <li>Roti (4)</li>
+                    <li>Raita</li>
+                    <li>Salad</li>
+                  </ul> <a class="waves-effect waves-light btn red right">Check chef profile</a>
+                </span>
+              </div>
             </div>
-            </div> <!-- Register tab end -->
-        </div> <!-- login-container end -->
-      </div>
+          </div>
+        </div>
+        <%}%>
+       
+    </div>
+    <br><br>
+
+    <div class="section">
+
     </div>
   </div>
 
- 
+  <footer class="page-footer orange">
+    <div class="container">
+      <div class="row">
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      Powered by <a class="orange-text text-lighten-3" href="http://materializecss.com">Love Cooking</a>
+      </div>
+    </div>
+
+    <div class="fixed-action-btn horizontal" style="bottom: 45px; right: 24px;">
+    <a class="btn-floating btn-large red">
+      <i class="large material-icons">mode_edit</i>
+    </a>
+    <ul>
+      <li><a class="btn-floating red"><i class="material-icons">insert_chart</i></a></li>
+      <li><a class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a></li>
+      <li><a class="btn-floating green"><i class="material-icons">publish</i></a></li>
+      <li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li>
+    </ul>
+  </div>
+  </footer>
 
 
   <!--  Scripts-->
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="javascripts/materialize.js"></script>
   <script src="javascripts/init.js"></script>
+  <script src="javascripts/index.js"></script>
 
   </body>
 </html>
