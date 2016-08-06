@@ -1,27 +1,54 @@
 /* GET home page. */
 exports.index = function(req, res){
-  res.render('index', { title: 'Express' });
+  res.render('index', {  });
 };
 
-exports.login = function(req, res){
-  console.log(req['body']);
-  res.render('login', { title: 'Express' });
+exports.login = function(req, res){ 
+  res.render('login', {  });
 };
 
 exports.loginPost = function(req, res){
   console.log(req.body.uname);
   console.log(req.body.pwd);
-  res.render('login', { title: 'Express' });
+  res.render('login', {  });
 };
 
-var privateMethods={
+exports.register = function(request, res)
+{
+  //console.log(request.body.);
+  console.log(request.body.pwd);
 
-"abc" :function(){
+  sanitizeRegisterationData (request.body);
 
-},
+  var userType = request.body.user_type;
+  var indexPage = "";
+  switch (userType.toLowercase()) {
+    case 'provider':
+      indexPage = 'providerprofile'
+      break;  
+    case 'customer':
+      indexPage = 'searchpage'    
+      break;
+  }
+  res.render(indexPage, { title: 'Express' });
+};
 
-"cde":function(){
 
-}
+function sanitizeRegisterationData (requestOb)
+{
+   var registerObject = {
+
+   };
+  if(requestOb != null)
+  {
+    registerObject.UserName = requestOb.user_name;
+    registerObject.Password = requestOb.password;
+    registerObject.FirstName = requestOb.first_name; 
+    registerObject.Address1 = requestOb.address1;     
+        
+
+
+  }
+
 
 }
