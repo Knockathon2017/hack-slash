@@ -1,5 +1,5 @@
 //Add a new user
-var User = require('../models/server.model');
+var User = require('../models/server.model.js');
 exports.create = function(req,res){
     var entry = new User({
         first_name: req.first_name,
@@ -22,6 +22,22 @@ exports.create = function(req,res){
     //redirect to login page
     res.redirect(301, '/login');
 };
+
+exports.update=function(req,res){
+var memberId=GetProviderById(req.Id);
+var condition={id:memberId};
+var update={
+            first_name: req.first_name,
+            last_name: req.last_name,
+            user_name: req.user_name,
+            email: req.email,
+            address1: req.address1,
+            address2: req.address2,
+            zipcode:req.zipcode,
+            mobile:req.mobile
+};
+User.update(condition,update ,function(err,numAffected,rawResponse){});
+}
 
 //get provider by zipcode
 exports.ListProvidersByZipCode = function(req, res){

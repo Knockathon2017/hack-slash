@@ -13,15 +13,18 @@ $(loginButton).off('click').on('click',function(){
 
 //registration region
 $('#registerBtn').off('click').on('click', function(){
-  var inputData = {      
-   "first_name" : $('#first_name').val(),
-   "last_name"  : $('#last_name').val(),
-   "address1": $('#address1').val() 
-  };
+  var inputData = {      
+   "user_name" : $('#reg_user_name').val(),
+   "email"  : $('#email').val(),
+   "mobile": $('#pri_mobile_no').val(),
+   "userType":  $('#rac').is(':checked') ? 'Consumer':  'Provider'
+  };
 
-var obHelper = new Helper();    
-   obHelper.PostDataToServer('/register', inputData , function(){ console.log('hello On success');});
+var obHelper = new Helper();    
+   obHelper.PostDataToServer('/register', inputData , function(){ console.log('hello On success');});
 });
+
+
 
 });
 

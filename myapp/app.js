@@ -12,9 +12,17 @@ var mongoose = require('mongoose');
 
 var app = express();
 
+var db;
 //connect mongoose db
-mongoose.connect('mongodb://127.0.0.1:27017/Hackslash');
-console.log('Database connected !');
+mongoose.connect('mongodb://127.0.0.1:27017/Hackslash', function(err, database){
+    if(err){
+        console.log(err)
+    }
+
+db = database;
+    console.log('Database connected !');
+});
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -29,10 +37,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(app.router);
 
 app.get('/', routes.login);
-app.get('/login',routes.login);
+app.get('/index',routes.index);
 app.post('/login',routes.loginPost);
 app.post('/register',routes.register);
-app.get('/users', users.list);
+//app.get('/user', user.list);
+app.get('/chef',routes.chef);
 
 /// catch 404 and forwarding to error handler
 app.use(function (req, res, next) {
@@ -64,5 +73,5 @@ app.use(function (err, req, res, next) {
 });
 
 app.listen(8098, function () {
-    console.log('app started on port', 8098);
+    console.log('app started on port 8098');
 });

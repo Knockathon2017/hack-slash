@@ -75,16 +75,9 @@
               </div>
               <div class="col s10">
                 <span class="black-text">
-                  <strong><%=Data.details[i].name %></strong> <a class="waves-effect waves-light btn tab right">Send your request</a>
+                  <strong><%=Data.details[i].name %></strong> <a id="sendrequest<%=i%>"" class="btn modal-trigger waves-effect waves-light btn tab right " data-target="modal1">View Dishes</a>
                   <div class="location clr">Location : Sector 62</div> 
-                  <div class="price"><%=Data.details[i].price %>/- Only</div>
-                  <ul class="recipy-list">
-                    <li>Rajma</li>
-                    <li>Rice</li>
-                    <li>Roti (4)</li>
-                    <li>Raita</li>
-                    <li>Salad</li>
-                  </ul> <a class="waves-effect waves-light btn red right">Check chef profile</a>
+                  <a class="waves-effect waves-light btn red right" href="http://localhost:8098/chef">Check chef profile</a>
                 </span>
               </div>
             </div>
@@ -97,6 +90,40 @@
 
     <div class="section">
 
+    </div>
+  </div>
+ <div id="modal1" class="modal bottom-sheet">
+    <div class="modal-content">
+     <div class="card-panel grey lighten-5 z-depth-1">
+        <div class="row valign-wrapper recipy-ctr">
+            <div class="col s2">
+                <img src="images/rajma.jpg" alt="" class="responsive-img"> <!-- notice the "circle" class -->
+            </div>
+            <div class="col s10">
+            <span class="black-text">
+
+                <div class="right">
+                    <div class="input-field col right s10">
+                        <input id="icon_prefix" type="number" class="validate">
+                        <label for="icon_prefix">Add quantity</label>
+                    </div><br><br>
+                    <a class="waves-effect waves-light btn tab right">Add to order</a>
+                </div>
+                <div>
+                <ul class="recipy-list">
+                    <% for(var i=0;i<DishData.dishes.length;i++){%>
+                    <li><%=DishData.dishes[i].name%></li>
+                </ul>
+                </div><br><br>
+                <div><h4 class="price"><%=DishData.dishes[i].price%></h4></div>
+                <%}%>
+            </span>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Close</a>
     </div>
   </div>
 

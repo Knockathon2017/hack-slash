@@ -1,6 +1,19 @@
 $(document).ready(function(){
     var item=$('#timelist').find('option[value=1]').length;
+     $('.modal-trigger').leanModal();
 });
+
+ $('.modal-trigger').leanModal({
+      dismissible: true, // Modal can be dismissed by clicking outside of the modal
+      opacity: .5, // Opacity of modal background
+      in_duration: 300, // Transition in duration
+      out_duration: 200, // Transition out duration
+      starting_top: '4%', // Starting top style attribute
+      ending_top: '10%', // Ending top style attribute
+      ready: '', // Callback for Modal open
+      complete:''// Callback for Modal close
+    }
+  );
 
 var eventListeners={
     "onSelectPlacementTime":function(){
@@ -26,11 +39,25 @@ var eventListeners={
         alert('Hello');
     },
 
+    "onClickViewDishes":function(){
+        $('#modal1').openModal();
+    },
+
     "onClickSearchByZipCallback":function(){
         alert('Hello');
     },
 
+    "onClickViewChefProfile":function(){
+        
+    },
+
+    "onClickEditProfile":function(){
+       
+    }
+
 };
+
+$('[id^=sendrequest]').on('click',eventListeners.onClickViewDishes);
 
 $('select#timelist').on('change',eventListeners.onSelectPlacementTime);
 
