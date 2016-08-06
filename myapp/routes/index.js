@@ -4,59 +4,32 @@ var userCtrl = require('../controllers/server.controller');
 exports.index = function(req, res){
     var data={
     details:[{
-    name:"Cane",
+    name:"Ankita",
     price:"120"
     },
     {
-    name:"Abel",
-    price:"120"
+    name:"Nisha",
+    price:"160"
     },
     {
-    name:"Nirmala",
-    price:"120"
+    name:"Henna",
+    price:"100"
     },
     {
-    name:"Vaijanti",
-    price:"120"
+    name:"Rahul",
+    price:"80"
     },
     {
     name:"Priya",
-    price:"120"
+    price:"110"
     },
     {
     name:"Surbhi",
-    price:"120"
+    price:"140"
     }]
   };
 
     var dishdata={
-    dishes:[{
-    name:"Aloo Parantha",
-    price:"120"
-    },
-    {
-    name:"Dal Tadka",
-    price:"120"
-    },
-    {
-    name:"Fried Rice",
-    price:"120"
-    },
-    {
-    name:"Chhole Bhature",
-    price:"120"
-    },
-    {
-    name:"Rajma Chawal",
-    price:"120"
-    },
-    {
-    name:"Dal Makhni",
-    price:"120"
-    }]
-  };
-
- var dishdata={
     dishes:[{
     name:"Aloo Parantha",
     price:"120"
@@ -122,6 +95,10 @@ exports.loginPost = function(req, res){
   res.render('login', { title: 'Express' });
 };
 
+exports.editprofile=function(req,res){
+res.render('edit-profile', { title: 'Express' });
+}
+
 exports.register = function(request, res)
 {
   //console.log(request.body.);
@@ -135,6 +112,10 @@ exports.register = function(request, res)
 
 exports.chef=function(req,res){
   res.render('profile',{ });
+};
+
+exports.dashboard=function(req,res){
+  res.render('dashboard',{ });
 };
 
 function sanitizeRegisterationData (requestOb)

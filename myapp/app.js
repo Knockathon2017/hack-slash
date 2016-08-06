@@ -40,8 +40,10 @@ app.get('/', routes.login);
 app.get('/index',routes.index);
 app.post('/login',routes.loginPost);
 app.post('/register',routes.register);
+app.get('/editprofile',routes.editprofile);
 //app.get('/user', user.list);
 app.get('/chef',routes.chef);
+app.get('/dashboard',routes.dashboard);
 
 /// catch 404 and forwarding to error handler
 app.use(function (req, res, next) {
