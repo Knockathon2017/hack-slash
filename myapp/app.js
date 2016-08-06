@@ -8,8 +8,13 @@ var bodyParser = require('body-parser');
 
 var routes = require('./routes');
 var users = require('./routes/user');
+var mongoose = require('mongoose');
 
 var app = express();
+
+//connect mongoose db
+mongoose.connect('mongodb://127.0.0.1:27017/Hackslash');
+console.log('Database connected !');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
